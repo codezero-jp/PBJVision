@@ -1450,8 +1450,7 @@ typedef void (^PBJVisionBlock)();
         default:
         {
             if ([videoConnection isVideoMirroringSupported]) {
-                BOOL mirror = (_cameraDevice == PBJCameraDeviceFront);
-                [videoConnection setVideoMirrored:mirror];
+                [videoConnection setAutomaticallyAdjustsVideoMirroring:YES];
             }
             if ([previewConnection isVideoMirroringSupported]) {
                 [previewConnection setAutomaticallyAdjustsVideoMirroring:YES];
