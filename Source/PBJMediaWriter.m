@@ -311,7 +311,12 @@
     }
     [_assetWriterVideoInput markAsFinished];
     [_assetWriterAudioInput markAsFinished];
-    [_assetWriter finishWritingWithCompletionHandler:handler];
+    
+    @try {
+        [_assetWriter finishWritingWithCompletionHandler:handler];
+    } @catch (NSException *exception) {
+        DLog(@"%@", exception.description)
+    }
 }
 
 
